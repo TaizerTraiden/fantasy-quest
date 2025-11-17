@@ -25,4 +25,44 @@ header h1{margin:0;font-size:28px;letter-spacing:0.6px}
 .btn{padding:10px 14px;border-radius:8px;border:0;background:linear-gradient(90deg,#6fa293,#4f7b6b);color:white;cursor:pointer}
 .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06)}
 #footerNote{margin-top:8px;color:var(--muted);font-size:13px}
+
 @media (max-width:800px){#ui{grid-template-columns:1fr;}}
+
+body {
+  align-items: flex-start;
+  padding: 16px;
+}
+
+#sceneBox {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+#text {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-y: auto;
+}
+
+.choiceBtn, .btn {
+  white-space: normal;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  body {
+    padding: 10px;
+  }
+
+  main {
+    padding: 16px;
+  }
+
+  #ui {
+    grid-template-columns: 1fr;
+  }
+
+  #sceneBox {
+    max-height: 65vh;
+  }
+}

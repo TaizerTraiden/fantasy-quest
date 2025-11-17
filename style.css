@@ -1,0 +1,174 @@
+:root {
+  --bg:#0b0f14;
+  --card:#0f1720;
+  --accent:#8fb0a6;
+  --muted:#9aa7b0;
+  --glass: rgba(255,255,255,0.03);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(ellipse at 20% 10%, rgba(143,176,166,0.06) 0%, transparent 10%), var(--bg);
+  color: #e6eef2;
+  overflow-x: hidden;
+}
+
+/* Убрали flex с body, чтобы на мобильном была нормальная прокрутка */
+body {
+  padding: 16px;
+  display: block;
+}
+
+main {
+  width: 980px;
+  max-width: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  padding: 18px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.7);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.6px;
+}
+
+.subtitle {
+  margin: 4px 0 14px;
+  color: var(--muted);
+}
+
+#ui {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 18px;
+}
+
+/* Блок генерации персонажа */
+#character {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+#genCharBtn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 0;
+  background: linear-gradient(90deg, #95c5b3, #6da392);
+  color: #06221d;
+  font-weight: 700;
+}
+
+#charBox {
+  margin-top: 12px;
+}
+
+.hidden { display: none; }
+
+/* Блок сцены с ограничением высоты и прокруткой */
+#sceneBox {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 10px;
+  max-height: 70vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Текст внутри — переносы + скролл */
+#text {
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.45;
+  font-size: 16px;
+  overflow-y: auto;
+}
+
+/* Кнопки выбора */
+.choices {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.choiceBtn {
+  padding: 10px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--glass);
+  color: var(--accent);
+  text-align: left;
+  width: 100%;
+  white-space: normal;
+}
+
+.choiceBtn:hover {
+  transform: translateX(6px);
+}
+
+/* Нижняя панель */
+#controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 0;
+  background: linear-gradient(90deg, #6fa293, #4f7b6b);
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  white-space: normal;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+#footerNote {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* === Мобильная адаптация === */
+@media (max-width: 800px) {
+
+  body {
+    padding: 8px;
+  }
+
+  main {
+    padding: 14px;
+    width: 100%;
+  }
+
+  #ui {
+    grid-template-columns: 1fr;
+  }
+
+  #sceneBox {
+    max-height: 65vh;
+  }
+
+  .choiceBtn, .btn {
+    width: 100%;
+  }
+}

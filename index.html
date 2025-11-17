@@ -1,0 +1,42 @@
+<!-- FILE: index.html -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ночная тропа — короткий квест</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <header>
+      <h1>Ночная тропа</h1>
+      <p class="subtitle">Фэнтези-коротышка — решишь путь, найдёшь финал. ~10 минут внимания.</p>
+    </header>
+
+    <section id="ui">
+      <div id="character">
+        <button id="genCharBtn">Сгенерировать персонажа</button>
+        <div id="charBox" class="hidden">
+          <h2 id="charName"></h2>
+          <p id="charDesc"></p>
+        </div>
+      </div>
+
+      <div id="sceneBox">
+        <div id="text" class="text"></div>
+        <div id="choices" class="choices"></div>
+      </div>
+
+      <div id="controls">
+        <button id="restartBtn" class="btn secondary">Начать сначала</button>
+        <button id="shareBtn" class="btn">Скопировать ссылку (в буфер)</button>
+      </div>
+
+      <div id="footerNote">Подсказка: игра работает в любом браузере на телефоне или на ПК.</div>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
